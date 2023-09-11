@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MyModals.StudentModal>
+@{
+    ViewBag.Title = "About";
+    ViewBag.Heading = "Student Data";
+}
+
+@*<div class="container text-white">
+
+    <h1 class="mt-5 text-center">@ViewBag.Heading</h1>
+
+    <div class="table-responsive">
+        <table id="studentDataTable" class="table mt-5 text-white h4">
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>*@
+
+
+
+
+<div class="container text-white ">
+
+    <h1 class="mt-5 text-center">@ViewBag.Heading</h1>
+
+    <div class="table-responsive">
+        <table class="table mt-5 text-white h4" >
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                <tr>
+                    <td>@i.FirstName</td>
+                    <td>@i.LastName</td>
+                    <td>@i.Email</td>
+                    <td>@i.Gender</td>
+                    <td>@i.Address</td>
+                    <td>
+                        <button class="btn btn-dark m-1">
+                            @Html.ActionLink(" ", "Edit", new { id = i.id },new { @class= "fas fa-edit text-white", onclick = "return confirm('Are you sure?');"})
+                        </button><button class="btn btn-dark m-1">
+                         @Html.ActionLink(" ", "DeleteData", new { id = i.id },new { @class= "fa-solid fa-trash text-white" ,
+                        onclick = "return confirm('Are you sure?');" })
+                    </button>
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

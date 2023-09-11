@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.Heading = "Student Details";
+}
+<h2>@ViewBag.Title</h2>
+
+
+<div class="text-center">
+    <h1>@ViewBag.Heading</h1>
+    <h2>@TempData["Subheading"]</h2>
+</div>
+
+@*<h2>@TempData["subtitle"]</h2>*@
+
+<div class=" table-responsive mt-5">
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Branch</th>
+                <th>Section</th>
+                <th>Graduation Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in @ViewBag.model)
+            {
+                <tr>
+                    <td>@i.Name</td>
+                    <td>@i.Email</td>
+                    <td>@i.Address</td>
+                    <td>@i.Branch</td>
+                    <td>@i.Section</td>
+                    <td>@i.GraduationYear</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>Use this area to provide additional information.</p>

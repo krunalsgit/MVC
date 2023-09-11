@@ -1,0 +1,84 @@
+﻿@model MyModals.StudentModal
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LogiLayout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="h4 mb-4">Create an Account!</h1>
+</div>
+
+<form class="user" action="Register" method="post">
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" name="FirstName" class="form-control form-control-user mt-2 p-3" id="exampleFirstName"
+                   placeholder="First Name">
+            <div class="text-danger m-2 text-capitalize font-weight-bold">
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+            </div>
+        <div class="col-sm-6">
+            <input type="text" name="LastName" class="form-control form-control-user mt-2 p-3" id="exampleLastName"
+                   placeholder="Last Name">
+            <div class="text-danger m-2 text-capitalize font-weight-bold">
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+        <input type="email" name="Email" class="form-control form-control-user mt-4 p-3" id="exampleInputEmail"
+               placeholder="Email Address">
+        <div class="text-danger m-2 text-capitalize font-weight-bold">
+            @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" name="Gender" class="form-control form-control-user mt-3  p-3"
+                   id="exampleInputGender" placeholder="Gender">
+            <div class="text-danger m-2 text-capitalize font-weight-bold">
+                @Html.ValidationMessageFor(m => m.Gender)
+            </div>
+            </div>
+        <div class="col-sm-6">
+            <input type="text" name="Address" class="form-control form-control-user mt-3 p-3"
+                   id="exampleRepeatAddress" placeholder="Address">
+            <div class="text-danger m-2 text-capitalize font-weight-bold">
+                @Html.ValidationMessageFor(m => m.Address)
+            </div>
+            </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="password" name="Password" class="form-control form-control-user mt-3  p-3"
+                   id="exampleInputPassword" placeholder="Password">
+            <div class="text-danger m-2 text-capitalize font-weight-bold">@Html.ValidationMessageFor(m => m.Password)</div>
+        </div>
+        <div class="col-sm-6">
+            <input type="password" name="repeatPassword" class="form-control form-control-user mt-3 p-3"
+                   id="exampleRepeatPassword" placeholder="Repeat Password">
+        </div>
+    </div>
+
+    <button type="submit" class="mt-4 btn btn-dark btn-user btn-block"> Register Account</button>
+</form>
+
+
+
+
+
+<hr>
+<div class="text-center">
+    <a class="small" href="forgot-password.html">Forgot Password?</a>
+</div>
+<div class="text-center">
+    <a class="small" href="login.html">Already have an account? Login!</a>
+</div>
+
+<h1>@ViewBag.msg</h1>
+
+
+
